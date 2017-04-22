@@ -1,8 +1,8 @@
 import { WishModel } from './wish-model';
 
 export class WishService {
-    getAll(wishlistName: string) {
-        return [
+    public async getAll(wishlistName: string): Promise<WishModel[]> {
+        return await [
             new WishModel({
                 title: 'Wish 1',
             }),

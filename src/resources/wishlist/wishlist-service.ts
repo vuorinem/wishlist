@@ -1,11 +1,11 @@
 import { WishlistModel } from './wishlist-model';
 
 export class WishlistService {
-    public get(name: string): WishlistModel {
+    public async get(name: string): Promise<WishlistModel> {
         let wishlist = new WishlistModel();
         wishlist.name = 'test';
         wishlist.title = 'Test Wishlist';
 
-        return wishlist;
+        return await wishlist;
     }
 }
