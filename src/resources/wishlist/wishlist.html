@@ -1,5 +1,13 @@
 <template>
 
+    <require from="../wish/wish"></require>
+
     <div class="title">${ wishlist.title }</div>
+
+    <ol>
+        <li repeat.for="wish of wishlist.wishes">
+            <wish wish.bind="wish"></wish>
+        </li>
+    </ol>
 
 </template>
