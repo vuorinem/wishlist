@@ -13,6 +13,10 @@ export class WishService {
         return Promise.resolve();
     }
 
+    public async delete(wish: WishModel): Promise<void> {
+        return Promise.resolve();
+    }
+
     private createSampleWish(index: number): WishModel {
         let imgHeight = Math.round(Math.random() * 20) * 10 + 100;
         let isReserved = Math.random() > 0.7;

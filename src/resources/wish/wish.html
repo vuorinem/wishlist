@@ -11,6 +11,9 @@
             <button click.trigger="edit()">
                 ${ isEditing ? 'Ok' : 'Edit' }
             </button>
+            <button click.trigger="delete()">
+                Delete
+            </button>
         </div>
         <div show.bind="canReserve">
             <button hide.bind="wish.isReserved" click.delegate="reserve()">
