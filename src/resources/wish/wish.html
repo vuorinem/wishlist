@@ -1,4 +1,4 @@
-<template class="${ wish.isReserved ? 'reserved' : '' }">
+<template class="${ canReserve && wish.isReserved ? 'reserved' : '' }">
 
     <img if.bind="wish.imgSrc" src.bind="wish.imgSrc" alt="Picture of ${ wish.title }" />
 
@@ -19,7 +19,7 @@
         </div>
     </div>
 
-    <p class="status" show.bind="wish.isReserved">
+    <p class="status" show.bind="canReserve && wish.isReserved">
         Reserved
     </p>
 
