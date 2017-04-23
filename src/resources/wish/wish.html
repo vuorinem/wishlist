@@ -10,6 +10,9 @@
         <button show.bind="canEdit" class="btn btn-primary" click.delegate="edit()">
             ${ isEditing ? 'Ok' : 'Edit' }
         </button>
+        <button show.bind="canReserve" class="btn btn-primary" click.delegate="reserve()">
+            Reserve
+        </button>
     </div>
 
 </template>
