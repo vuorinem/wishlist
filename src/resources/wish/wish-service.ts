@@ -2,47 +2,16 @@ import { WishModel } from './wish-model';
 
 export class WishService {
     public async getAll(wishlistName: string): Promise<WishModel[]> {
-        return await [
-            new WishModel({
-                title: 'Wish 1',
-                imgSrc: 'http://placehold.it/300x300',
-            }),
-            new WishModel({
-                title: 'Wish 2',
-                imgSrc: 'http://placehold.it/300x200',
-            }),
-            new WishModel({
-                title: 'Wish 3',
-                imgSrc: 'http://placehold.it/300x100',
-            }),
-            new WishModel({
-                title: 'Wish 4',
-                imgSrc: 'http://placehold.it/300x150',
-            }),
-            new WishModel({
-                title: 'Wish 5',
-                imgSrc: 'http://placehold.it/300x250',
-            }),
-            new WishModel({
-                title: 'Wish 6',
-                imgSrc: 'http://placehold.it/300x220',
-            }),
-            new WishModel({
-                title: 'Wish 7',
-                imgSrc: 'http://placehold.it/300x300',
-            }),
-            new WishModel({
-                title: 'Wish 8',
-                imgSrc: 'http://placehold.it/300x250',
-            }),
-            new WishModel({
-                title: 'Wish 9',
-                imgSrc: 'http://placehold.it/300x220',
-            }),
-            new WishModel({
-                title: 'Wish 10',
-                imgSrc: 'http://placehold.it/300x300',
-            }),
-        ];
+        return await [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(this.createSampleWish);
+    }
+
+    private createSampleWish(index: number): WishModel {
+        let imgHeight = Math.round(Math.random() * 20) * 10 + 100;
+
+        return new WishModel({
+            title: 'Sample Wish ' + index,
+            description: 'This is a sample wish with simple description',
+            imgSrc: `http://placehold.it/300x${imgHeight}`,
+        })
     }
 }

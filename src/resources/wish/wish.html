@@ -4,6 +4,8 @@
 
     <div class="title" contenteditable.bind="isEditing">${ wish.title }</div>
 
+    <p contenteditable.bind="isEditing">${ wish.description }</p>
+
     <div class="buttons">
         <button show.bind="canEdit" class="btn btn-primary" click.delegate="edit()">
             ${ isEditing ? 'Ok' : 'Edit' }
