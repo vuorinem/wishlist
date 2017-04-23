@@ -2,11 +2,11 @@
 
     <img if.bind="wish.imgSrc" src.bind="wish.imgSrc" alt="Picture of ${ wish.title }" />
 
-    <div class="title">${ wish.title }</div>
+    <div class="title" contenteditable.bind="isEditing">${ wish.title }</div>
 
     <div class="buttons">
-        <button show.bind="canEdit" class="btn btn-primary">
-            Edit
+        <button show.bind="canEdit" class="btn btn-primary" click.delegate="edit()">
+            ${ isEditing ? 'Ok' : 'Edit' }
         </button>
     </div>
 
