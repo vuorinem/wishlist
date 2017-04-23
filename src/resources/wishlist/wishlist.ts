@@ -4,5 +4,6 @@ import { WishlistModel } from './wishlist-model';
 export class Wishlist {
 
     @bindable private wishlist: WishlistModel;
+    @bindable canEdit: boolean = false;
 
 }
