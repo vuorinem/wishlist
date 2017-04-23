@@ -1,0 +1,41 @@
+wishlist {
+    > .title {
+        font-size: 3rem;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    ol.wishes {
+        margin: 0;
+        padding: 0;
+
+        column-count: 4;
+
+        li {
+            margin: 0;
+            padding: 0;
+
+            display: inline-block;
+            width: 100%;
+            
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #fff;
+
+            wish {
+                > img {
+                    width: 100%;
+                    height: auto;
+                    margin-bottom: 10px;
+                }
+
+                > .title {
+                    color: $brand-primary;
+                    font-size: 1.5rem;
+                    font-weight: bold;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
