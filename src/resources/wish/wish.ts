@@ -18,19 +18,18 @@ export class Wish {
     constructor(private wishService: WishService) {
     }
 
-    private edit() {
+    private async edit() {
         if (this.isEditing) {
-            this.wishService.save(this.wish)
-                .then(() => this.isEditing = false);
-
+            await this.wishService.save(this.wish);
+            this.isEditing = false;
         } else {
             this.isEditing = true;
         }
     }
 
-    private reserve() {
-        this.wishService.reserve(this.wish)
-            .then(() => this.wish.isReserved = true);
+    private async reserve() {
+        await this.wishService.reserve(this.wish);
+        this.wish.isReserved = true;
     }
 
 }
