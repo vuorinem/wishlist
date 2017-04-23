@@ -15,11 +15,13 @@ export class WishService {
 
     private createSampleWish(index: number): WishModel {
         let imgHeight = Math.round(Math.random() * 20) * 10 + 100;
+        let isReserved = Math.random() > 0.7;
 
         return new WishModel({
             title: 'Sample Wish ' + index,
             description: 'This is a sample wish with simple description',
             imgSrc: `http://placehold.it/300x${imgHeight}`,
+            isReserved: isReserved,
         })
     }
 }
