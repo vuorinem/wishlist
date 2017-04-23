@@ -8,7 +8,7 @@
 
     <ol class="wishes">
         <li repeat.for="wish of wishlist.wishes">
-            <wish wish.bind="wish" can-edit.bind="canEdit"></wish>
+            <wish wish.bind="wish" can-edit.bind="canEdit" on-delete.call="deleteWish(wish)"></wish>
         </li>
     </ol>
 
