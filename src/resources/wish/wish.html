@@ -1,18 +1,26 @@
-<template>
+<template class="${ wish.isReserved ? 'reserved' : '' }">
 
     <img if.bind="wish.imgSrc" src.bind="wish.imgSrc" alt="Picture of ${ wish.title }" />
 
     <div class="title" contenteditable.bind="isEditing">${ wish.title }</div>
 
-    <p contenteditable.bind="isEditing">${ wish.description }</p>
+    <p class="description" contenteditable.bind="isEditing">${ wish.description }</p>
 
-    <div class="buttons">
-        <button show.bind="canEdit" class="btn btn-primary" click.delegate="edit()">
-            ${ isEditing ? 'Ok' : 'Edit' }
-        </button>
-        <button show.bind="canReserve" class="btn btn-primary" click.delegate="reserve()">
-            Reserve
-        </button>
+    <div class="actions">
+        <div show.bind="canEdit">
+            <button click.trigger="edit()">
+                ${ isEditing ? 'Ok' : 'Edit' }
+            </button>
+        </div>
+        <div show.bind="canReserve">
+            <button hide.bind="wish.isReserved" click.delegate="reserve()">
+                Reserve
+            </button>
+        </div>
     </div>
+
+    <p class="status" show.bind="wish.isReserved">
+        Reserved
+    </p>
 
 </template>
