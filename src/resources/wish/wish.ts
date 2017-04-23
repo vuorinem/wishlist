@@ -1,6 +1,8 @@
-import { bindable, computedFrom } from 'aurelia-framework';
+import { autoinject, bindable, computedFrom } from 'aurelia-framework';
 import { WishModel } from './wish-model';
+import { WishService } from './wish-service';
 
+@autoinject
 export class Wish {
 
     @bindable wish: WishModel;
@@ -8,17 +10,27 @@ export class Wish {
 
     private isEditing: boolean = false;
 
-    @computedFrom('canEdit')
+    @computedFrom('canEdit', 'wish.isReserved')
     private get canReserve(): boolean {
         return !this.canEdit;
     }
 
+    constructor(private wishService: WishService) {
+    }
+
     private edit() {
-        this.isEditing = !this.isEditing;
+        if (this.isEditing) {
+            this.wishService.save(this.wish)
+                .then(() => this.isEditing = false);
+
+        } else {
+            this.isEditing = true;
+        }
     }
 
     private reserve() {
-        throw Error('Not Implemented');
+        this.wishService.reserve(this.wish)
+            .then(() => this.wish.isReserved = true);
     }
 
 }

@@ -5,6 +5,14 @@ export class WishService {
         return await [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(this.createSampleWish);
     }
 
+    public async save(wish: WishModel): Promise<void> {
+        return Promise.resolve();
+    }
+
+    public async reserve(wish: WishModel): Promise<void> {
+        return Promise.resolve();
+    }
+
     private createSampleWish(index: number): WishModel {
         let imgHeight = Math.round(Math.random() * 20) * 10 + 100;
 
