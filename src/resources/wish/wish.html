@@ -11,7 +11,7 @@
             <button click.trigger="edit()">
                 ${ isEditing ? 'Ok' : 'Edit' }
             </button>
-            <button click.trigger="delete()">
+            <button show.bind="isEditing" click.trigger="delete()">
                 Delete
             </button>
         </div>
