@@ -11,8 +11,7 @@
         <li repeat.for="wish of wishlist.wishes">
             <wish wish.bind="wish"
                   can-edit.bind="canEdit"
-                  on-delete.call="deleteWish(wish)"
-                  view-model.ref="wishComponents[$index]"></wish>
+                  on-delete.call="deleteWish(wish)"></wish>
         </li>
         <li show.bind="canEdit">
             <button class="btn btn-block btn-lg"

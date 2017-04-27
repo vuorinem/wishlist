@@ -1,9 +1,9 @@
-import { autoinject, bindable, computedFrom } from 'aurelia-framework';
+import { autoinject, bindable, ComponentAttached, computedFrom } from 'aurelia-framework';
 import { WishModel } from './wish-model';
 import { WishService } from './wish-service';
 
 @autoinject
-export class Wish {
+export class Wish implements ComponentAttached {
 
     @bindable wish: WishModel;
     @bindable canEdit: boolean = false;
@@ -19,8 +19,8 @@ export class Wish {
     constructor(private wishService: WishService) {
     }
 
-    public startEdit() {
-        this.isEditing = true;
+    public attached() {
+        this.isEditing = this.wish.isNew;
     }
 
     private async edit() {
