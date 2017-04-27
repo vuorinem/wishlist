@@ -19,6 +19,10 @@ export class Wish {
     constructor(private wishService: WishService) {
     }
 
+    public startEdit() {
+        this.isEditing = true;
+    }
+
     private async edit() {
         if (this.isEditing) {
             await this.wishService.save(this.wish);
