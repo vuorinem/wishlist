@@ -1,28 +1,35 @@
 <template class="${ canReserve && wish.isReserved ? 'reserved' : '' }">
 
-    <img if.bind="wish.imgSrc" src.bind="wish.imgSrc" alt="Picture of ${ wish.title }" />
+    <img if.bind="wish.imgSrc"
+         src.bind="wish.imgSrc"
+         alt="Picture of ${ wish.title }" />
 
-    <div class="title" contenteditable.bind="isEditing">${ wish.title }</div>
+    <div class="title"
+         contenteditable.bind="isEditing">${ wish.title }</div>
 
-    <p class="description" contenteditable.bind="isEditing">${ wish.description }</p>
+    <p class="description"
+       contenteditable.bind="isEditing">${ wish.description }</p>
 
     <div class="actions">
         <div show.bind="canEdit">
             <button click.trigger="edit()">
                 ${ isEditing ? 'Ok' : 'Edit' }
             </button>
-            <button show.bind="isEditing" click.trigger="delete()">
+            <button show.bind="isEditing"
+                    click.trigger="delete()">
                 Delete
             </button>
         </div>
         <div show.bind="canReserve">
-            <button hide.bind="wish.isReserved" click.delegate="reserve()">
+            <button hide.bind="wish.isReserved"
+                    click.delegate="reserve()">
                 Reserve
             </button>
         </div>
     </div>
 
-    <p class="status" show.bind="canReserve && wish.isReserved">
+    <p class="status"
+       show.bind="canReserve && wish.isReserved">
         Reserved
     </p>
 
