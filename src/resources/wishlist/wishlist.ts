@@ -33,7 +33,11 @@ export class Wishlist {
     }
 
     private addWish() {
-        this.wishes.push(new WishModel());
+        const wish = new WishModel();
+
+        wish.wishlistName = this.wishlist.name;
+
+        this.wishes.push(wish);
     }
 
 }
