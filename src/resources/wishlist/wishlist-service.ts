@@ -15,6 +15,6 @@ export class WishlistService {
     }
 
     public async save(wishlist: WishlistModel) {
-        await localStorage.setItem(`wishlist/${name}`, JSON.stringify(wishlist));
+        await localStorage.setItem(`wishlist/${wishlist.name}`, JSON.stringify(wishlist));
     }
 }

@@ -19,6 +19,10 @@ export class Wishlist {
     }
 
     public async nameChanged() {
+        if (this.wishlist) {
+            await this.wishlistService.save(this.wishlist);
+        }
+
         if (this.name) {
             this.wishlist = await this.wishlistService.get(this.name);
             this.wishes = await this.wishService.getAll(this.name);

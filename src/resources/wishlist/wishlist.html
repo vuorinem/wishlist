@@ -3,9 +3,8 @@
     <require from="../wish/wish"></require>
 
     <div class="title"
-         contenteditable.bind="canEdit">
-        ${ wishlist.title }
-    </div>
+         textcontent.two-way="wishlist.title"
+         contenteditable.bind="canEdit"></div>
 
     <ol class="wishes">
         <li repeat.for="wish of wishes">
