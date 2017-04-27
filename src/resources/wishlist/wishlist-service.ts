@@ -1,19 +1,20 @@
-import { autoinject } from 'aurelia-framework';
 import { WishlistModel } from './wishlist-model';
-import { WishService } from '../wish/wish-service';
 
-@autoinject
 export class WishlistService {
-    constructor(private wishService: WishService) {
-    }
-
     public async get(name: string): Promise<WishlistModel> {
-        let wishlist = new WishlistModel();
-        wishlist.name = 'test';
-        wishlist.title = 'Test Wishlist';
+        const wishlistJson = localStorage.getItem(`wishlist/${name}`);
 
-        wishlist.wishes.push(...await this.wishService.getAll('test'));
+        if (wishlistJson) {
+            return await new WishlistModel(JSON.parse(wishlistJson));
+        }
+
+        const wishlist = new WishlistModel();
+        wishlist.name = name;
 
         return await wishlist;
+    }
+
+    public async save(wishlist: WishlistModel) {
+        await localStorage.setItem(`wishlist/${name}`, JSON.stringify(wishlist));
     }
 }
