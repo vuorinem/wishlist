@@ -4,7 +4,7 @@ import { WishlistService } from './resources/wishlist/wishlist-service';
 import { WishlistModel } from './resources/wishlist/wishlist-model';
 
 @autoinject
-export class View {
+export class View implements RoutableComponentActivate {
 
     private wishlist: WishlistModel;
 
