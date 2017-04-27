@@ -5,10 +5,12 @@
          alt="Picture of ${ wish.title }" />
 
     <div class="title"
-         contenteditable.bind="isEditing">${ wish.title }</div>
+         textcontent.two-way="wish.title"
+         contenteditable.bind="isEditing"></div>
 
     <p class="description"
-       contenteditable.bind="isEditing">${ wish.description }</p>
+       textcontent.two-way="wish.description"
+       contenteditable.bind="isEditing"></p>
 
     <div class="actions">
         <div show.bind="canEdit">
