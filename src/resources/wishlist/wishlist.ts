@@ -11,7 +11,7 @@ export class Wishlist {
         this.wishlist.wishes.splice(this.wishlist.wishes.indexOf(wish), 1);
     }
 
-    private addWish(){
+    private addWish() {
         this.wishlist.wishes.push(new WishModel());
     }
 
