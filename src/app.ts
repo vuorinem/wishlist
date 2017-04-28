@@ -12,6 +12,7 @@ export class App implements ConfiguresRouter {
         moduleId: 'edit',
       },
       {
+        name: 'edit',
         route: 'edit/:name',
         moduleId: 'edit',
       },

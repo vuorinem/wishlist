@@ -4,6 +4,11 @@
 
     <h2>Edit Wishlist</h2>
 
+    <div class="form-group">
+        <label for="name" class="col-md-2">Name</label>
+        <input type="text" name="name" class="form-control" value.bind="name & updateTrigger:'blur'" />
+    </div>
+
     <wishlist name.bind="name"
               can-edit.one-time="true"></wishlist>
 
