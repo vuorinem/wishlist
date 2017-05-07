@@ -1,9 +1,8 @@
 ﻿$bootstrap-sass-asset-helper: true;
+
+@import "./styles/bootstrap-variables";
 @import "~bootstrap-sass/assets/stylesheets/bootstrap";
 
-@media (max-width: 767px) {
-  /* On small screens, the nav menu spans the full width of the screen. Leave a space for it. */
-  .body-content {
-    padding-top: 50px;
-  }
-}
+@import "./styles/common", 
+  "./styles/layout",
+  "./styles/wishlist";
