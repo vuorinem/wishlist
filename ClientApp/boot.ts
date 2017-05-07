@@ -1,6 +1,5 @@
 import 'isomorphic-fetch';
 import { Aurelia, PLATFORM } from 'aurelia-framework';
-import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap';
 declare const IS_DEV_BUILD: boolean; // The value is supplied by Webpack during the build
 
