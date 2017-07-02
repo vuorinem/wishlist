@@ -7,3 +7,4 @@
     public string ImgSrc { get; set; }
     public bool IsReserved { get; set; }
   }
+}
